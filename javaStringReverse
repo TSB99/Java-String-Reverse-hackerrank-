@@ -1,0 +1,44 @@
+Public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        int count =0;
+        Stack<Character> stack = new Stack<>();
+        if(((A.length()/2)*2)==A.length()){
+            for(int i=0;i<A.length()/2;i++){
+                stack.push(A.charAt(i));
+            }
+            for(int j=A.length()/2;j<A.length();j++){
+                if(A.charAt(j)==stack.peek()){
+                    stack.pop();
+                } else {
+                    System.out.println("No");
+                    count++;
+                    break;
+                }
+                
+            }
+        } else {
+            for(int k=0;k<=A.length()/2;k++){
+                stack.push(A.charAt(k));
+            }
+            for(int l=A.length()/2;l<A.length();l++){
+                if(A.charAt(l)==stack.peek()){
+                    stack.pop();
+                } else {
+                    System.out.println("No");
+                    count++;
+                    break;
+                }
+
+            }
+        }
+        if(count==0){
+            System.out.println("Yes");
+            }
+       
+    }
+}
